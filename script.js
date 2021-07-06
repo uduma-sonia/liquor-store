@@ -37,14 +37,19 @@ window.addEventListener("DOMContentLoaded", function () {
 function displayProductsItem(productItem) {
   let productDisplay = productItem.map((item) => {
     return `
-        <article class="product-item">
-          <img src="${item.img}" alt="${item.title}" />
-          <div class="product-price mt-4">
-            <p class="font-weight-bold text-capitalize">${item.title}</p>
-            <p>&#8358;${item.price}.00</p>
+        <div class="col-6 col-md-3 product-item d-flex justify-content-center">
+          <div>
+            <div class="product-image">
+              <img src="${item.img}" alt="" />
+            </div>
+
+            <div class="product-price mt-4">
+              <p>${item.title}</p>
+              <p>&#8358;${item.price}.00</p>
+            </div>
           </div>
-        </article>
-    `;
+        </div>
+          `;
   });
 
   productDisplay = productDisplay.join("");
